@@ -1,0 +1,107 @@
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`quartz-counter`
+A basic counter to increment and decrement an integer. It uses a paper-button under the hood
+for a ripple animation.
+
+When min and max values are set, the button will disable when it hits those limits.
+
+
+The following custom properties and mixins are also available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+--quartz-counter | Mixin applied to the counter | `{}`
+--quartz-counter-border | Border style for min and max buttons | `{}`
+--quartz-counter-outline | Outline style for focused min and max buttons | `{}`
+
+@demo demo/index.html
+-->
+
+<dom-module id="quartz-counter">
+  <template>
+    <style>
+      :host {
+          display: block;
+          @apply(--quartz-counter);
+
+          --paper-button: {
+              border: 1px solid var(--quartz-counter-border);
+              border-radius: 25%;
+              min-width: 2.5em;
+          }
+
+      }
+
+     paper-button:focus {
+         outline: var(--quartz-counter-outline);
+     }
+
+     span {
+         margin-left: .2em;
+     }
+    </style>
+
+    <span>[[count]]</span>
+    <paper-button id="dec">-</paper-button>
+    <paper-button id="inc">+</paper-button>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'quartz-counter',
+
+      properties: {
+        count: {
+          type: Number,
+          value: 0,
+          observer: '_setDisabled'
+        },
+
+        min: Number,
+
+        max: Number,
+      },
+
+      listeners: {
+        'inc.tap': '_checkRange',
+        'dec.tap': '_checkRange'
+      },
+
+      _checkRange: function(e) {
+        let id = e.target.id;
+        if (id === 'inc') {
+          if (this.max === undefined || this.count + 1 <= this.max)
+            // block the count change and set inc to disabled
+            this.count = this.count + 1;
+        } else {
+          if (this.min === undefined || this.count - 1 >= this.min)
+            // similar but dec is disabled
+            this.count = this.count - 1;
+        }
+      },
+
+      /* Enable or disable buttons based on this.count */
+      _setDisabled: function(oldVal, newVal) {
+        const min = this.min,
+              max = this.max;
+        if (oldVal === min && newVal !== min) {
+          this.$.dec.setAttribute("disabled");
+        } else if (oldVal !== min && newVal === min) {
+          this.$.dec.removeAttribute("disabled");
+        }
+
+        if (oldVal === max && newVal !== max) {
+          this.$.inc.setAttribute("disabled");
+        } else if (oldVal !== max && newVal === max) {
+          this.$.inc.removeAttribute("disabled");
+        }
+      }
+
+    });
+  </script>
+</dom-module>
