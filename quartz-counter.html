@@ -91,15 +91,15 @@ Custom property | Description | Default
         const min = this.min,
               max = this.max;
         if (oldVal === min && newVal !== min) {
-          this.$.dec.setAttribute("disabled");
+          this.$.dec.setAttribute('disabled', true);
         } else if (oldVal !== min && newVal === min) {
-          this.$.dec.removeAttribute("disabled");
+          this.$.dec.removeAttribute('disabled');
         }
 
         if (oldVal === max && newVal !== max) {
-          this.$.inc.setAttribute("disabled");
+          this.$.inc.setAttribute('disabled', true);
         } else if (oldVal !== max && newVal === max) {
-          this.$.inc.removeAttribute("disabled");
+          this.$.inc.removeAttribute('disabled');
         }
       }
 
