@@ -73,6 +73,11 @@ Custom property | Description | Default
         'dec.tap': '_checkRange'
       },
 
+      ready: function(){
+        // initialize the component's disabled state
+        this._setDisabled(this.count, undefined);
+      },
+
       _checkRange: function(e) {
         let id = e.target.id;
         if (id === 'inc') {
@@ -87,18 +92,20 @@ Custom property | Description | Default
       },
 
       /* Enable or disable buttons based on this.count */
-      _setDisabled: function(oldVal, newVal) {
+      _setDisabled: function(newVal, oldVal) {
         const min = this.min,
               max = this.max;
-        if (oldVal === min && newVal !== min) {
+        if (newVal === min &&
+            (oldVal !== min || oldVal === undefined)) {
           this.$.dec.setAttribute('disabled', true);
-        } else if (oldVal !== min && newVal === min) {
+        } else if (newVal !== min && oldVal === min) {
           this.$.dec.removeAttribute('disabled');
         }
 
-        if (oldVal === max && newVal !== max) {
+        if (newVal === max &&
+            (oldVal !== max || oldVal === undefined)) {
           this.$.inc.setAttribute('disabled', true);
-        } else if (oldVal !== max && newVal === max) {
+        } else if (newVal !== max && oldVal === max) {
           this.$.inc.removeAttribute('disabled');
         }
       }
