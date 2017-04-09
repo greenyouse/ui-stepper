@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>quartz-counter demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../quartz-counter.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic quartz-counter demo</h3>
+      <demo-snippet>
+        <template>
+          <p>Default element</p>
+          <quartz-counter></quartz-counter>
+          <br>
+          <p>With a custom count</p>
+          <quartz-counter count="5"></quartz-counter>
+          <br>
+          <p>Showing a min of 1 and max of 5</p>
+          <quartz-counter count="2" min="1" max="5"></quartz-counter>
+          <br>
+          <p>Initialize with a max value</p>
+          <quartz-counter count="5" min="1" max="5"></quartz-counter>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
