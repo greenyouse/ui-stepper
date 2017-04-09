@@ -15,6 +15,7 @@ Custom property | Description | Default
 ----------------|-------------|----------
 --quartz-counter | Mixin applied to the counter | `{}`
 --quartz-counter-border | Border style for min and max buttons | `{}`
+--quartz-counter-focused-border | Button border style when focused | `{}`
 --quartz-counter-outline | Outline style for focused min and max buttons | `{}`
 
 @demo demo/index.html
@@ -37,6 +38,7 @@ Custom property | Description | Default
 
      paper-button:focus {
        outline: var(--quartz-counter-outline, --primary-outline);
+       border: var(--quartz-counter-focused-border);
      }
 
      span {
