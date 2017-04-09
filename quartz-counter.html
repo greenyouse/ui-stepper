@@ -28,7 +28,7 @@ Custom property | Description | Default
           @apply(--quartz-counter);
 
           --paper-button: {
-              border: 1px solid var(--quartz-counter-border);
+              border: 2px solid var(--quartz-counter-border);
               border-radius: 25%;
               min-width: 2.5em;
           }
@@ -40,12 +40,12 @@ Custom property | Description | Default
      }
 
      span {
-         margin-left: .2em;
+         margin: 0 1em;
      }
     </style>
 
-    <span>[[count]]</span>
     <paper-button id="dec">-</paper-button>
+    <span>[[count]]</span>
     <paper-button id="inc">+</paper-button>
 
   </template>
