@@ -23,24 +23,24 @@ Custom property | Description | Default
 <dom-module id="quartz-counter">
   <template>
     <style>
-      :host {
-          display: block;
-          @apply(--quartz-counter);
+     :host {
+       display: block;
+       @apply(--quartz-counter);
 
-          --paper-button: {
-              border: 2px solid var(--quartz-counter-border);
-              border-radius: 25%;
-              min-width: 2.5em;
-          }
+       --paper-button: {
+         border: 2px solid var(--quartz-counter-border);
+         border-radius: 25%;
+         min-width: 2.5em;
+       }
 
-      }
+     }
 
      paper-button:focus {
        outline: var(--quartz-counter-outline, --primary-outline);
      }
 
      span {
-         margin: 0 1em;
+       margin: 0 1em;
      }
     </style>
 
