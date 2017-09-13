@@ -12,8 +12,14 @@
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../quartz-counter.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+       #styled {
+         --quartz-counter-border: 2px solid blue;
+         --quartz-counter-outline: 2px 2px 2px red;
+       }
+      </style>
+    </custom-style>
   </head>
   <body>
     <div class="vertical-section-container centered">
@@ -22,15 +28,20 @@
         <template>
           <p>Default element</p>
           <quartz-counter></quartz-counter>
-          <br>
-          <p>With a custom count</p>
-          <quartz-counter count="5"></quartz-counter>
-          <br>
-          <p>Showing a min of 1 and max of 5</p>
-          <quartz-counter count="2" min="1" max="5"></quartz-counter>
-          <br>
-          <p>Initialize with a max value</p>
-          <quartz-counter count="5" min="1" max="5"></quartz-counter>
+        </template>
+      </demo-snippet>
+      <br>
+      <demo-snippet>
+        <template>
+          <p>Ugly (but custom) styling</p>
+          <quartz-counter id="styled"></quartz-counter>
+        </template>
+      </demo-snippet>
+      <br>
+      <demo-snippet>
+        <template>
+          <p>Custom count, min, and max values</p>
+          <quartz-counter count="4" min="1" max="10"></quartz-counter>
         </template>
       </demo-snippet>
     </div>
