@@ -1,2 +1,0 @@
-- [ ] do basic testing and a11y validation via WCT
-- [ ] improve README
