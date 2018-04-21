@@ -1,4 +1,4 @@
-# \<ui-stepper\>
+# \<ui-stepper\> [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/greenyouse/ui-stepper)
 
 A basic counter to increment and decrement an integer, based on [iOS UIStepper](https://developer.apple.com/documentation/uikit/uistepper).
 
