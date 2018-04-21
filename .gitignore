@@ -1,1 +1,4 @@
 bower_components/
+/analysis.json
+node_modules/
+/yarn.lock

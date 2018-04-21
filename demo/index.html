@@ -4,44 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>quartz-counter demo</title>
+    <title>ui-stepper demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../quartz-counter.html">
+    <link rel="import" href="../ui-stepper.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
        #styled {
-         --quartz-counter-border: 2px solid blue;
-         --quartz-counter-outline: 2px 2px 2px red;
+         --ui-stepper-border: 2px solid blue;
+         --ui-stepper-outline: 2px 2px 2px red;
        }
       </style>
     </custom-style>
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic quartz-counter demo</h3>
+      <h3>Basic ui-stepper demo</h3>
       <demo-snippet>
         <template>
           <p>Default element</p>
-          <quartz-counter></quartz-counter>
+          <ui-stepper></ui-stepper>
         </template>
       </demo-snippet>
       <br>
       <demo-snippet>
         <template>
           <p>Ugly (but custom) styling</p>
-          <quartz-counter id="styled"></quartz-counter>
+          <ui-stepper id="styled"></ui-stepper>
         </template>
       </demo-snippet>
       <br>
       <demo-snippet>
         <template>
           <p>Custom count, min, and max values</p>
-          <quartz-counter count="4" min="1" max="10"></quartz-counter>
+          <ui-stepper count="4" min="1" max="10"></ui-stepper>
         </template>
       </demo-snippet>
     </div>

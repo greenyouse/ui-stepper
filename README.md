@@ -1,4 +1,4 @@
-# \<quartz-counter\>
+# \<ui-stepper\>
 
 A basic counter to increment and decrement an integer.
 

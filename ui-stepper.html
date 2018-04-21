@@ -1,16 +1,16 @@
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../polymer/polymer.html">
 
-<dom-module id="quartz-counter">
+<dom-module id="ui-stepper">
   <template>
     <custom-style>
       <style>
        :host {
          display: block;
-         @apply --quartz-counter;
+         @apply --ui-stepper;
 
          --paper-button: {
-           border: var(--quartz-counter-border, 1px solid black);
+           border: var(--ui-stepper-border, 1px solid black);
          }
        }
 
@@ -22,12 +22,12 @@
 
        [disabled] {
          --paper-button: {
-           @apply --quartz-counter-disabled
+           @apply --ui-stepper-disabled
          }
        }
 
        paper-button:focus {
-         box-shadow: var(--quartz-counter-outline, 0 2px 2px black);
+         box-shadow: var(--ui-stepper-outline, 0 2px 2px black);
        }
 
        span {
@@ -44,7 +44,7 @@
 
   <script>
    /**
-    * `quartz-counter`
+    * `ui-stepper`
     * A basic counter to increment and decrement an integer. It uses a paper-button under the hood
     * for a ripple animation.
     *
@@ -55,17 +55,17 @@
     *
     * Custom property | Description | Default
     * ----------------|-------------|----------
-    * --quartz-counter | Mixin applied to the counter | `{}`
-    * --quartz-counter-border | Border style for min and max buttons | `black`
-    * --quartz-counter-disabled | Mixin applied to the disabled button |  `{}`
-    * --quartz-counter-outline | Outline style for focused min and max buttons | `0 0 2px 2px black`
+    * --ui-stepper | Mixin applied to the counter | `{}`
+    * --ui-stepper-border | Border style for min and max buttons | `black`
+    * --ui-stepper-disabled | Mixin applied to the disabled button |  `{}`
+    * --ui-stepper-outline | Outline style for focused min and max buttons | `0 0 2px 2px black`
     *
     * @customElement
     * @polymer
     * @demo demo/index.html
     */
-   class QuartzCounter extends Polymer.Element {
-     static get is() { return 'quartz-counter'; }
+   class UIStepper extends Polymer.Element {
+     static get is() { return 'ui-stepper'; }
      static get properties() {
        return {
          count: {
@@ -133,6 +133,6 @@
      }
    }
 
-   customElements.define(QuartzCounter.is, QuartzCounter);
+   customElements.define(UIStepper.is, UIStepper);
   </script>
 </dom-module>

@@ -1,7 +1,7 @@
 {
-  "name": "quartz-counter",
+  "name": "ui-stepper",
   "description": "A basic counter to increment and decrement an integer.",
-  "main": "quartz-counter.html",
+  "main": "ui-stepper.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
     "paper-input": "PolymerElements/paper-input#^2.0.0",
