@@ -2,6 +2,10 @@
   "name": "ui-stepper",
   "description": "A basic counter to increment and decrement an integer.",
   "main": "ui-stepper.html",
+  "authors": [
+    "Ed Babcock <ed@edbabcock.com>"
+  ],
+  "license": "MIT",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
     "paper-input": "PolymerElements/paper-input#^2.0.0",
