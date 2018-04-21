@@ -24,7 +24,7 @@ A basic counter to increment and decrement an integer, based on [iOS UIStepper](
 ```sh
 $ bower install greenyouse/ui-stepper r--save
 ```
-rating 
+
 ## Import
 
 ```html
