@@ -10,11 +10,22 @@
          @apply --quartz-counter;
 
          --paper-button: {
-           border: var(--quartz-counter-border, 2px solid black);
-           border-radius: 25%;
-           min-width: 2.5em;
+           border: var(--quartz-counter-border, 1px solid black);
          }
        }
+
+       paper-button {
+         border-radius: 50%;
+         min-width: 2.5em;
+         border-width: 1px;
+       }
+
+       [disabled] {
+         --paper-button: {
+           @apply --quartz-counter-disabled
+         }
+       }
+
        paper-button:focus {
          box-shadow: var(--quartz-counter-outline, 0 2px 2px black);
        }
@@ -46,6 +57,7 @@
     * ----------------|-------------|----------
     * --quartz-counter | Mixin applied to the counter | `{}`
     * --quartz-counter-border | Border style for min and max buttons | `black`
+    * --quartz-counter-disabled | Mixin applied to the disabled button |  `{}`
     * --quartz-counter-outline | Outline style for focused min and max buttons | `0 0 2px 2px black`
     *
     * @customElement
